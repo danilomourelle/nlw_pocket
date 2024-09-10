@@ -3,7 +3,7 @@ import { and, count, eq, gte, lte, sql } from "drizzle-orm";
 import { goalCompletions, goals } from "../../database/schema";
 import { db } from "../database";
 
-export async function getWeekPendingGoals() {
+export async function goalsProgress() {
   const firstDayOfWeek = dayjs().startOf("week").toDate();
   const lastDayOfWeek = dayjs().endOf("week").toDate();
 
@@ -37,7 +37,7 @@ export async function getWeekPendingGoals() {
       .groupBy(goalCompletions.goalId)
   );
 
-  const pendingGoals = await db
+  const goalsProgress = await db
     .with(goalsCreatedBeforeLastDayOfWeek, goalCompletionsCount)
     .select({
       id: goalsCreatedBeforeLastDayOfWeek.id,
@@ -56,5 +56,5 @@ export async function getWeekPendingGoals() {
     )
     .orderBy(goalCompletionsCount.completionsCount);
 
-  return { pendingGoals };
+  return { goalsProgress };
 }
