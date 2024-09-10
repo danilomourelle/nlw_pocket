@@ -17,6 +17,7 @@
     "dev": "tsx --env-file .env watch src/http/server.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx --env-file .env database/seed.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
