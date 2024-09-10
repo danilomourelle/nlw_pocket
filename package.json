@@ -14,6 +14,26 @@
     "node": ">=20.17.0"
   },
   "scripts": {
+    "dev": "tsx --env-file .env watch src/http/server.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx --env-file .env database/seed.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^22.5.4",
+    "drizzle-kit": "^0.24.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "dayjs": "^1.11.13",
+    "drizzle-orm": "^0.33.0",
+    "fastify": "^4.28.1",
+    "postgres": "^3.4.4",
+    "zod": "^3.23.8"
   }
 }
