@@ -1,0 +1,19 @@
+{
+  "name": "nlw-pocket-backend",
+  "version": "1.0.0",
+  "description": "Backend for the NLW Pocket project",
+  "author": "Danilo Mourelle",
+  "license": "ISC",
+  "keywords": [
+    "nlw",
+    "pocket",
+    "rocketseat"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.17.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
