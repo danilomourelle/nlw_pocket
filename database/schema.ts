@@ -10,3 +10,13 @@ export const goals = databaseSchema.table("goals", {
     .defaultNow()
     .notNull(),
 });
+
+export const goalCompletions = databaseSchema.table("goal_completions", {
+  id: text("id").primaryKey(),
+  goalId: text("goal_id")
+    .references(() => goals.id)
+    .notNull(),
+  createdAd: timestamp("created_at", { withTimezone: true })
+    .defaultNow()
+    .notNull(),
+});
