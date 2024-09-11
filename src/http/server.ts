@@ -7,6 +7,7 @@ import {
 import { createGoalCompletionRoute } from "./routes/create-completions";
 import { createGoalRoute } from "./routes/create-goal";
 import { listGoalsCompletionsRoute } from "./routes/list-goals-completions";
+import { getWeekSummaryRoute } from "./routes/get-week-summary";
 
 const server = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -16,6 +17,7 @@ server.setSerializerCompiler(serializerCompiler);
 server.register(createGoalRoute);
 server.register(createGoalCompletionRoute);
 server.register(listGoalsCompletionsRoute);
+server.register(getWeekSummaryRoute);
 
 server
   .listen({ port: 3333 })
