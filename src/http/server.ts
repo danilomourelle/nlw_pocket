@@ -5,10 +5,10 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from "fastify-type-provider-zod";
-import { createGoalCompletionRoute } from "./routes/create-completions";
-import { createGoalRoute } from "./routes/create-goal";
-import { getWeekSummaryRoute } from "./routes/get-week-summary";
-import { listGoalsCompletionsRoute } from "./routes/list-goals-completions";
+import { createGoalCompletionRoute } from "./routes/createCompletions";
+import { createGoalRoute } from "./routes/createGoal";
+import { getWeekSummaryRoute } from "./routes/getWeekSummary";
+import { listGoalsCompletionsRoute } from "./routes/listGoalsCompletions";
 
 const server = fastify().withTypeProvider<ZodTypeProvider>();
 
