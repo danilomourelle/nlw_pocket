@@ -15,6 +15,13 @@
       "when": 1725981982419,
       "tag": "0001_military_sphinx",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726234460400,
+      "tag": "0002_naive_silvermane",
+      "breakpoints": true
     }
   ]
 }

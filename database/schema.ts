@@ -7,7 +7,7 @@ export const goals = databaseSchema.table("goals", {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => createId()),
-  title: text("title").notNull(),
+  title: text("title").notNull().unique(),
   desiredWeeklyFrequency: integer("desired_weekly_frequency").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true })
     .defaultNow()
