@@ -5,23 +5,22 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from "fastify-type-provider-zod";
-import { createGoalCompletionRoute } from "./routes/createCompletions";
-import { createGoalRoute } from "./routes/createGoal";
-import { getWeekSummaryRoute } from "./routes/getWeekSummary";
-import { listGoalsCompletionsRoute } from "./routes/listGoalsCompletions";
+import { completeGoalRoute } from "./http/routes/completeGoal";
+import { createGoalRoute } from "./http/routes/createGoal";
+import { getWeekSummaryRoute } from "./http/routes/getWeekSummary";
+import { listGoalsCompletionsRoute } from "./http/routes/listGoalsCompletions";
 
 const server = fastify().withTypeProvider<ZodTypeProvider>();
 
-server
-  .register(fastifyCors, {
-    origin: '*',
-  })
+server.register(fastifyCors, {
+  origin: "*",
+});
 
 server.setValidatorCompiler(validatorCompiler);
 server.setSerializerCompiler(serializerCompiler);
 
 server.register(createGoalRoute);
-server.register(createGoalCompletionRoute);
+server.register(completeGoalRoute);
 server.register(listGoalsCompletionsRoute);
 server.register(getWeekSummaryRoute);
 

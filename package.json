@@ -14,7 +14,7 @@
     "node": ">=20.17.0"
   },
   "scripts": {
-    "dev": "tsx watch --env-file .env src/http/server.ts",
+    "dev": "tsx watch --env-file .env src/server.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "tsx --env-file .env database/seed.ts",
