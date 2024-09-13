@@ -1,10 +1,10 @@
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod";
-import { createGoalCompletion } from "../../modules/createGoalCompletion";
+import { completeGoal } from "../../modules/completeGoal";
 
-export const createGoalCompletionRoute: FastifyPluginAsyncZod = async (server) => {
+export const completeGoalRoute: FastifyPluginAsyncZod = async (server) => {
   server.post(
-    "/goals-completions",
+    "/goal/complete",
     {
       schema: {
         body: z.object({
@@ -14,11 +14,11 @@ export const createGoalCompletionRoute: FastifyPluginAsyncZod = async (server) =
     },
     async (request) => {
       const { goalId } = request.body;
-  
-      const response = await createGoalCompletion({
+
+      const response = await completeGoal({
         goalId,
       });
-  
+
       return response;
     }
   );
