@@ -4,7 +4,7 @@ import { createGoal } from "../../modules/createGoal";
 
 export const createGoalRoute: FastifyPluginAsyncZod = async (server) => {
   server.post(
-    "/goals",
+    "/goal",
     {
       schema: {
         body: z.object({
