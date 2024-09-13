@@ -8,7 +8,7 @@ import {
 import { completeGoalRoute } from "./http/routes/completeGoal";
 import { createGoalRoute } from "./http/routes/createGoal";
 import { getWeekSummaryRoute } from "./http/routes/getWeekSummary";
-import { listGoalsCompletionsRoute } from "./http/routes/listGoalsCompletions";
+import { listGoalsCompletionsRoute } from "./http/routes/getGoalsProgress";
 
 const server = fastify().withTypeProvider<ZodTypeProvider>();
 

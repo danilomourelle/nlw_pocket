@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { and, count, eq, gte, lte, sql } from "drizzle-orm";
+import { and, count, desc, eq, gte, lte, sql } from "drizzle-orm";
 import { goalCompletions, goals } from "../../database/schema";
 import { db } from "../database";
 
@@ -54,7 +54,7 @@ export async function goalsProgress() {
       goalCompletionsCount,
       eq(goalsCreatedBeforeLastDayOfWeek.id, goalCompletionsCount.goalId)
     )
-    .orderBy(goalCompletionsCount.completionsCount);
+    .orderBy(goalsCreatedBeforeLastDayOfWeek.title);
 
-  return { goalsProgress };
+  return goalsProgress;
 }
